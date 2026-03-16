@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="emailSignupBtn" type="id"/>
+    <item name="loginText" type="id"/>
+    <item name="signupButton" type="id"/>
+    <item name="restDistance" type="id"/>
+    <item name="restRating" type="id"/>
+    <item name="restImage" type="id"/>
+    <item name="restName" type="id"/>
+
+</resources>

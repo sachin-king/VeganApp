@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F4FBF4"
+    android:padding="24dp">
+
+    <!-- Logo / App Name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🌱 VeganFinder"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="#1B5E20"
+        android:layout_marginBottom="60dp" />
+
+    <!-- Google Button -->
+    <Button
+        android:id="@+id/googleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Continue with Google"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="6dp"
+        android:layout_marginBottom="20dp"
+        android:padding="12dp" />
+
+    <!-- OR Divider -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#777777"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Email Signup Button -->
+    <Button
+        android:id="@+id/emailSignupBtn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Sign Up with Email"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2E7D32"
+        android:elevation="6dp"
+        android:padding="12dp" />
+
+    <!-- Login Text -->
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Log In"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#2E7D32"
+        android:layout_marginTop="30dp" />
+
+</LinearLayout>
+
