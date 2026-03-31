@@ -36,15 +36,31 @@ android {
 }
 
 dependencies {
+    /*implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.0")*/
+
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
 
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-storage-ktx") // 🔥 image upload साठी
+
+
+    implementation("org.osmdroid:osmdroid-android:6.1.16")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.material3)
+    implementation(libs.play.services.maps3d)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

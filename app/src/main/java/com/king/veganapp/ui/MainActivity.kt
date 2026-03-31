@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.king.veganapp.R
-import com.king.veganapp.fragments.FavoritesFragment
+import com.king.veganapp.fragments.FavoriteFragment
 import com.king.veganapp.fragments.HomeFragment
 import com.king.veganapp.fragments.MapFragment
 import com.king.veganapp.fragments.ProfileFragment
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.favorites -> {
-                    loadFragment(FavoritesFragment())
+                    loadFragment(FavoriteFragment())
                     true
                 }
 

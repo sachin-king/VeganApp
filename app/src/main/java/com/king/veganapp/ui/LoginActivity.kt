@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.king.veganapp.R
 
 
@@ -57,6 +58,23 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this,
                                 "Login Successful",
                                 Toast.LENGTH_SHORT).show()
+
+
+                            // 🔥 NEW CODE START (IMPORTANT)
+                            val user = auth.currentUser
+
+                            val db = FirebaseFirestore.getInstance()
+
+                            val data = hashMapOf(
+                                "name" to "User", // later change करू शकतोस
+                                "email" to user?.email,
+                                "location" to ""
+                            )
+
+                            db.collection("users")
+                                .document(user!!.uid)
+                                .set(data)
+                            // 🔥 NEW CODE END
 
                             startActivity(Intent(this, MainActivity::class.java))
                             finish()

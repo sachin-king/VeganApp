@@ -1,14 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment">
+    android:background="#F5F5F5">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <!-- 🌿 HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#4CAF50">
+
+            <!-- 🖼️ PROFILE IMAGE -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground"
+                android:background="@drawable/circle_bg"
+                android:padding="4dp" />
+
+            <!-- 👤 NAME -->
+            <TextView
+                android:id="@+id/profileName"
+                android:text="Your Name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <!-- 📄 INFO CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="6dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 📧 EMAIL -->
+                <TextView
+                    android:text="Email"
+                    android:textStyle="bold"
+                    android:textColor="#777"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:text="your@email.com"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- 📍 LOCATION -->
+                <TextView
+                    android:text="Location"
+                    android:textStyle="bold"
+                    android:textColor="#777"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/profileLocation"
+                    android:text="Your City"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 🔘 ACTION BUTTONS -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ✏️ EDIT PROFILE -->
+            <Button
+                android:id="@+id/editBtn"
+                android:text="Edit Profile"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#4CAF50"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <!-- 🚪 LOGOUT -->
+            <Button
+                android:id="@+id/logoutBtn"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#E53935"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

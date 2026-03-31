@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.VeganApp" parent="Base.Theme.VeganApp" />
+
+
+
 </resources>

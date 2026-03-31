@@ -1,60 +1,85 @@
 package com.king.veganapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.firestore.FirebaseFirestore
 import com.king.veganapp.R
+import com.king.veganapp.ui.RestaurantDetailActivity
+import org.osmdroid.config.Configuration
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Marker
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class MapFragment : Fragment(R.layout.fragment_map) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MapFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class MapFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var mapView: MapView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mapView = view.findViewById(R.id.mapView)
+
+        Configuration.getInstance().load(
+            requireContext(),
+            PreferenceManager.getDefaultSharedPreferences(requireContext())
+        )
+        mapView.setTileSource(TileSourceFactory.MAPNIK)
+
+        mapView.setMultiTouchControls(true)
+
+        val mapController = mapView.controller
+        mapController.setZoom(15.0)
+
+        // 📍 Default location (example Navi Mumbai)
+        val startPoint = GeoPoint(19.0330, 73.0297)
+        mapController.setCenter(startPoint)
+
+        // 👉 markers add कर
+        addMarkers()
     }
+    private fun addMarkers() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false)
-    }
+        val db = FirebaseFirestore.getInstance()
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MapFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MapFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        db.collection("restaurants")
+            .get()
+            .addOnSuccessListener { result ->
+
+                for (doc in result) {
+
+                    val name = doc.getString("name") ?: ""
+                    val lat = doc.getDouble("lat") ?: 0.0
+                    val lng = doc.getDouble("lng") ?: 0.0
+
+                    val point = GeoPoint(lat, lng)
+
+                    val marker = Marker(mapView)
+                    marker.position = point
+                    marker.title = name
+
+                    // 👉 click listener
+                    marker.setOnMarkerClickListener { m, _ ->
+
+                        val context = requireContext()
+                        val intent = Intent(context, RestaurantDetailActivity::class.java)
+
+                        intent.putExtra("name", name)
+                        context.startActivity(intent)
+
+                        true
+                    }
+
+                    mapView.overlays.add(marker)
                 }
+
+                mapView.invalidate()
             }
     }
+
 }

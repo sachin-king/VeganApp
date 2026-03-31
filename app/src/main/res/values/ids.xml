@@ -8,5 +8,8 @@
     <item name="restRating" type="id"/>
     <item name="restImage" type="id"/>
     <item name="restName" type="id"/>
+    <item name="editName" type="id"/>
+    <item name="editEmail" type="id"/>
+    <item name="editLocation" type="id"/>
 
 </resources>

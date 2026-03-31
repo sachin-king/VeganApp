@@ -1,0 +1,91 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 🔥 Image Banner -->
+        <ImageView
+            android:id="@+id/detailImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rest1"/>
+
+        <!-- Restaurant Info -->
+        <TextView
+            android:id="@+id/detailName"
+            android:text="Restaurant Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/detailAddress"
+            android:text="Kalamboli, Navi Mumbai"
+            android:paddingStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/detailRating"
+            android:text="⭐ 4.5"
+            android:paddingStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- 🌱 Vegan Badge -->
+        <TextView
+            android:text="🌱 100% Vegan"
+            android:textColor="#4CAF50"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- 🍔 Menu -->
+        <TextView
+            android:text="Menu"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="• Vegan Burger\n• Tofu Bowl\n• Vegan Pizza"
+            android:paddingStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- ⭐ Reviews -->
+        <TextView
+            android:text="Reviews"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="⭐ 4.5 - Great vegan food!"
+            android:paddingStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- ❤️ Favorite Button -->
+        <Button
+            android:id="@+id/favBtn"
+            android:text="Add to Favorite"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>
