@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "437964629284",
+    "project_id": "taskmanagerapp-acd3d",
+    "storage_bucket": "taskmanagerapp-acd3d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437964629284:android:4e16ca10d26c81d728ffb1",
+        "android_client_info": {
+          "package_name": "com.king.veganapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB732GmAuzo8xCHPL8JdW9LehlgY2P3ExM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437964629284:android:28f474125a860bec28ffb1",
+        "android_client_info": {
+          "package_name": "com.linkific.taskapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB732GmAuzo8xCHPL8JdW9LehlgY2P3ExM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

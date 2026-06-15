@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 🔥 TOP PROFILE ROW -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- PROFILE IMAGE -->
+            <!--<ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground"
+                android:background="@drawable/circle_bg"
+                android:padding="3dp" />-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_profile"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#CCCCCC"/>
+
+
+
+            <!-- NAME + SUBTITLE -->
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:text="Your Name"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Welcome back 👋"
+                    android:textSize="14sp"
+                    android:textColor="#777"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 🔥 SPACE -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+
+        <!-- 📧 EMAIL CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="14dp"
+            card_view:cardElevation="4dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Email"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:text="your@email.com"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#222"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 📍 LOCATION CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="14dp"
+            card_view:cardElevation="4dp">
+
+            <LinearLayout
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Location"
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/profileLocation"
+                    android:text="Fetching location..."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#222"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 🔥 SPACE -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+        <!-- ✏️ EDIT BUTTON -->
+        <Button
+            android:id="@+id/editBtn"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:backgroundTint="#3F51B5"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- 🚪 LOGOUT BUTTON -->
+        <Button
+            android:id="@+id/logoutBtn"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:backgroundTint="#FF5252"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+

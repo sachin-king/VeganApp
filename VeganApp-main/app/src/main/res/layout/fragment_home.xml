@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        &lt;!&ndash; Search Bar &ndash;&gt;
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="30dp"
+            card_view:cardElevation="4dp">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:hint="Search Vegan Restaurants"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="10dp"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+        &lt;!&ndash; Filter Button &ndash;&gt;
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Filter ▼"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/green"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:paddingHorizontal="16dp"/>
+
+
+
+        &lt;!&ndash; Vegan Restaurants &ndash;&gt;
+        <TextView
+            android:text="Vegan Restaurants Nearby"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                &lt;!&ndash; ALL &ndash;&gt;
+                <TextView
+                    android:id="@+id/btnAll"
+                    android:text="All"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/filter_selected_bg"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                &lt;!&ndash; VEGAN &ndash;&gt;
+                <TextView
+                    android:id="@+id/btnVegan"
+                    android:text="🌿 Vegan"
+                    android:textSize="14sp"
+                    android:textColor="#333"
+                    android:background="@drawable/filter_unselected_bg"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                &lt;!&ndash; OPEN &ndash;&gt;
+                <TextView
+                    android:id="@+id/btnOpen"
+                    android:text="🟢 Open"
+                    android:textSize="14sp"
+                    android:textColor="#333"
+                    android:background="@drawable/filter_unselected_bg"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                &lt;!&ndash; CLOSED &ndash;&gt;
+                <TextView
+                    android:id="@+id/btnClosed"
+                    android:text="🔴 Closed"
+                    android:textSize="14sp"
+                    android:textColor="#333"
+                    android:background="@drawable/filter_unselected_bg"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/restaurantRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:padding="4dp"/>
+
+
+
+        &lt;!&ndash; Trending Recipes &ndash;&gt;
+        <TextView
+            android:text="Trending Recipes"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipeRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:padding="4dp"
+            android:clipToPadding="false"/>
+
+
+        &lt;!&ndash; Categories &ndash;&gt;
+        <TextView
+            android:text="Categories"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"/>
+
+    </LinearLayout>
+
+</ScrollView>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F6F8">
+
+    <!-- 🔝 APP NAME -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@android:color/white"
+        android:elevation="8dp">
+
+        <TextView
+            android:text="🌿"
+            android:textSize="24sp"
+            android:layout_marginEnd="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="VEGANZA"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:letterSpacing="0.05"
+            android:textColor="#1B5E20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <!-- 🔽 STATIC CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 🔍 SEARCH BAR -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="30dp"
+            card_view:cardElevation="6dp">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:hint="Search Vegan Restaurants"
+                android:textSize="15sp"
+                android:textColor="#333"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@android:color/transparent"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawableEnd="@android:drawable/ic_btn_speak_now"
+                android:drawablePadding="10dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 🔽 FILTER BUTTON -->
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="Filter ▼"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/green"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="20dp"
+            android:elevation="4dp"
+            android:background="@drawable/rounded_button"/>
+
+        <!-- 🌿 TITLE -->
+        <TextView
+            android:text="Vegan Restaurants Nearby"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#1B5E20"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- 🔥 FILTER CHIPS -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/btnAll"
+                    android:text="All"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/filter_selected_bg"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/btnVegan"
+                    android:text="🌿 Vegan"
+                    android:textColor="#333"
+                    android:background="@drawable/filter_unselected_bg"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/btnOpen"
+                    android:text="🟢 Open"
+                    android:textColor="#333"
+                    android:background="@drawable/filter_unselected_bg"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/btnClosed"
+                    android:text="🔴 Closed"
+                    android:textColor="#333"
+                    android:background="@drawable/filter_unselected_bg"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+    <!-- 🍽 ONLY THIS WILL SCROLL -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/restaurantRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="8dp"/>
+
+</LinearLayout>
+
+

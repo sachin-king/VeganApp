@@ -1,0 +1,451 @@
+<!--<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    &lt;!&ndash; ✅ Toolbar (ScrollView बाहेर) &ndash;&gt;
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:title="Restaurant Details"
+        android:titleTextColor="@android:color/white" />
+
+    &lt;!&ndash; ✅ Scrollable Content &ndash;&gt;
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        &lt;!&ndash; ONLY ONE CHILD &ndash;&gt;
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            &lt;!&ndash; 🔥 Image Banner &ndash;&gt;
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rest1"/>
+
+            &lt;!&ndash; Restaurant Info &ndash;&gt;
+            <TextView
+                android:id="@+id/detailName"
+                android:text="Restaurant Name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/detailAddress"
+                android:text="Kalamboli, Navi Mumbai"
+                android:paddingStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/detailRating"
+                android:text="⭐ 4.5"
+                android:paddingStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash; 🌱 Vegan Badge &ndash;&gt;
+            <TextView
+                android:text="🌱 100% Vegan"
+                android:textColor="#4CAF50"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash; 🍔 Menu &ndash;&gt;
+            <TextView
+                android:text="Menu"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="• Vegan Burger\n• Tofu Bowl\n• Vegan Pizza"
+                android:paddingStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash; ⭐ Reviews &ndash;&gt;
+            <TextView
+                android:text="Reviews"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="⭐ 4.5 - Great vegan food!"
+                android:paddingStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash; ❤️ Favorite Button &ndash;&gt;
+            <Button
+                android:id="@+id/favBtn"
+                android:text="Add to Favorite"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>-->
+
+<!--<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    &lt;!&ndash; ✅ Toolbar &ndash;&gt;
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green" /> &lt;!&ndash; 🔥 use color resource &ndash;&gt;
+    android:title="Restaurant Details"
+    android:titleTextColor="@android:color/white" />
+
+    &lt;!&ndash; ✅ Scrollable Content &ndash;&gt;
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            &lt;!&ndash; 🔥 Image Banner &ndash;&gt;
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"/>  &lt;!&ndash; 🔥 little bigger &ndash;&gt;
+            android:scaleType="centerCrop"
+            android:src="@drawable/rest1"/>
+
+            &lt;!&ndash; 🔥 CARD for better UI &ndash;&gt;
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardElevation="6dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    &lt;!&ndash; Restaurant Name &ndash;&gt;
+                    <TextView
+                        android:id="@+id/detailName"
+                        android:text="Restaurant Name"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#222"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    &lt;!&ndash; Address &ndash;&gt;
+                    <TextView
+                        android:id="@+id/detailAddress"
+                        android:text="Pune, India"
+                        android:textColor="#777"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    &lt;!&ndash; Rating + Distance &ndash;&gt;
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/detailRating"
+                            android:text="⭐ 4.5"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="  |  "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        &lt;!&ndash; 🔥 NEW DISTANCE &ndash;&gt;
+                        <TextView
+                            android:id="@+id/detailDistance"
+                            android:text="2 km"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    &lt;!&ndash; 🌱 Vegan Badge &ndash;&gt;
+                    <TextView
+                        android:id="@+id/veganBadge"
+                        android:text="🌱 100% Vegan"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:background="@color/green"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            &lt;!&ndash; 🍔 Menu Section &ndash;&gt;
+            <TextView
+                android:text="Menu"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingStart="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/detailMenu"
+                android:text="• Vegan Burger\n• Tofu Bowl\n• Vegan Pizza"
+                android:paddingStart="12dp"
+                android:textColor="#444"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash; ⭐ Reviews &ndash;&gt;
+            <TextView
+                android:text="Reviews"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/detailReviews"
+                android:text="⭐ 4.5 - Great vegan food!"
+                android:paddingStart="12dp"
+                android:textColor="#444"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash; ❤️ Favorite Button &ndash;&gt;
+            <Button
+                android:id="@+id/favBtn"
+                android:text="Add to Favorite ❤️"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/green"
+                android:textColor="@android:color/white"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <!-- ✅ Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:title="Restaurant Details"
+        android:titleTextColor="@android:color/white" />
+
+    <!-- ✅ Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--  Image Banner -->
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rest1"/>
+
+            <!--  CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardElevation="6dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Name -->
+                    <TextView
+                        android:id="@+id/detailName"
+                        android:text="Restaurant Name"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#222"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- Address -->
+                    <TextView
+                        android:id="@+id/detailAddress"
+                        android:text="Pune, India"
+                        android:textColor="#777"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- Rating + Distance -->
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/detailRating"
+                            android:text="⭐ 4.5"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:text="  |  "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/detailDistance"
+                            android:text="2 km"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <!--  Open / Closed -->
+                    <TextView
+                        android:id="@+id/detailStatus"
+                        android:text="🟢 Open"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <!-- 🌱 Vegan Badge -->
+                    <TextView
+                        android:id="@+id/veganBadge"
+                        android:text="🌱 100% Vegan"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:background="@color/green"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--  Menu -->
+            <!--<TextView
+                android:text="Menu"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:paddingStart="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/detailMenu"
+                android:text="• Vegan Burger\n• Tofu Bowl\n• Vegan Pizza"
+                android:paddingStart="12dp"
+                android:textColor="#444"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            &lt;!&ndash;  Reviews &ndash;&gt;
+            <TextView
+                android:text="Reviews"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/detailReviews"
+                android:text=" 4.5 - Great vegan food!"
+                android:paddingStart="12dp"
+                android:textColor="#444"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>-->
+
+            <!-- ❤️ Button -->
+            <Button
+                android:id="@+id/favBtn"
+                android:text="Add to Favorite ❤️"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/green"
+                android:textColor="@android:color/white"
+                android:layout_margin="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+
+
