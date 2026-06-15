@@ -17,3 +17,4 @@ class MyApp : Application() {
         Configuration.getInstance().userAgentValue = packageName
     }
 }
+

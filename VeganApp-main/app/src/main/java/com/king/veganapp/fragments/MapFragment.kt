@@ -367,7 +367,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
             LocationServices.getFusedLocationProviderClient(requireContext())
     }
 
-    // 🔥 LIFECYCLE FIX
+
     override fun onResume() {
         super.onResume()
         mapView.onResume()
@@ -450,7 +450,7 @@ class MapFragment : Fragment(R.layout.fragment_map) {
         )
     }
 
-    // 🔥 GEOAPIFY API
+
     private fun loadNearbyRestaurants(lat: Double, lng: Double) {
 
         val apiKey = "7e28a0187b35491b83f51aeb66422812"
